@@ -1,0 +1,15 @@
+POS\Model\Entity\Item:
+  type: entity
+  table: item
+  fields:
+    name:
+      type: string
+    price:
+      type: integer
+  manyToOne:
+    category:
+      targetEntity: POS\Model\Entity\Category
+      inversedBy: items
+      joinColumn:
+        name: category_id
+        referencedColumnName: id

@@ -1,0 +1,15 @@
+POS\Model\Entity\Order:
+  type: entity
+  table: tickets
+  fields:
+    status:
+      type: integer
+    time:
+      type: datetime
+  manyToOne:
+    table:
+      targetEntity: POS\Model\Entity\Table
+      inversedBy: orders
+      joinColumn:
+        name: table_id
+        referencedColumnName: id

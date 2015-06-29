@@ -1,0 +1,10 @@
+POS\Model\Entity\Table:
+  type: entity
+  table: covers
+  fields:
+    name:
+     type: string
+  oneToMany:
+    orders:
+      targetEntity: POS\Model\Entity\Order
+      mappedBy: table

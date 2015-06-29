@@ -1,0 +1,10 @@
+POS\Model\Entity\Category:
+  type: entity
+  table: category
+  fields:
+    name:
+      type: string
+  oneToMany:
+    items:
+      targetEntity: POS\Model\Entity\Item
+      mappedBy: category

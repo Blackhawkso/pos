@@ -1,0 +1,15 @@
+POS\Model\Type:
+  type: entity
+  table: entity_type
+  id:
+    id:
+      type: integer
+      generator:
+        strategy: AUTO
+  fields:
+    label:
+      type: string
+  oneToMany:
+    entities:
+      targetEntity: POS\Model\Entity
+      mappedBy: entity_type

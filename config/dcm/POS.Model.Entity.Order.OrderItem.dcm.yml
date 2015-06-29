@@ -1,0 +1,20 @@
+POS\Model\Entity\Order\OrderItem:
+  type: entity
+  table: order_item
+  id:
+    id:
+      type: integer
+      generator:
+        strategy: AUTO
+  manyToOne:
+    item:
+      targetEntity: POS\Model\Entity\Item
+      name: item_id
+      referencedColumnName: id
+    order:
+      targetEntity: POS\Model\Entity\Order
+      name: order_id
+      referencedColumnName: id
+  fields:
+    qty:
+      type: integer

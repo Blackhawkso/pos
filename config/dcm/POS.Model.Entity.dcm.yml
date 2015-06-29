@@ -1,0 +1,24 @@
+POS\Model\Entity:
+  type: entity
+  table: entity
+  inheritanceType: JOINED
+  discriminatorColumn:
+    name: type
+    type: integer
+  discriminatorMap:
+    "1": POS\Model\Entity\Table
+    "2": POS\Model\Entity\Category
+    "3": POS\Model\Entity\Item
+    "4": POS\Model\Entity\Order
+  id:
+    id:
+      type: integer
+      generator:
+        strategy: AUTO
+  manyToOne:
+    entity_type:
+      targetEntity: POS\Model\Type
+      joinColumn:
+        name: entity_type
+        referencedColumnName: id
+      inversedBy: entities
